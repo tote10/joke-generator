@@ -1,0 +1,295 @@
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right top, #1e3c72, #2a5298);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      transition: background 0.5s ease;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 500px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      color: white;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+      color: #fff;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .btn-group button {
+      flex: 1;
+      min-width: 140px;
+    }
+
+    button {
+      padding: 12px 24px;
+      background: #00f2fe;
+      border: none;
+      border-radius: 10px;
+      color: #000;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    button:hover {
+      background: #4facfe;
+      transform: scale(1.05);
+    }
+
+    #joke {
+      width: 100%;
+      height: 120px;
+      border-radius: 12px;
+      border: none;
+      padding: 15px;
+      font-size: 1rem;
+      background-color: white;
+      color: black;
+      resize: none;
+      backdrop-filter: blur(10px);
+      margin-bottom: 20px;
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    body.dark {
+      background: linear-gradient(to right top, #000428, #004e92);
+      color: white;
+    }
+
+    body.dark .container {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+
+    body.dark #joke {
+      background-color: rgba(0, 0, 0, 0.3);
+      color: white;
+    }
+
+    body.dark button {
+      background-color: #222;
+      color: #fff;
+      border: 2px solid #666;
+    }
+
+    #loading {
+      font-weight: bold;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%   { opacity: 1; }
+      50%  { opacity: 0.4; }
+      100% { opacity: 1; }
+    }
+
+    :root {
+      --bg-color: rgba(74, 45, 118, 0);
+      --text-color: #fff;
+      --item-bg: rgb(90, 95, 95);
+      --item-hover: rgb(158, 53, 11);
+      --shadow-color: rgba(255, 127, 80, 0.4);
+    }
+
+    body.dark {
+      --bg-color: #222;
+      --text-color: #eee;
+      --item-bg: #444;
+      --item-hover: #666;
+      --shadow-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .history-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0 10px;
+      
+    }
+
+    .history-header h3 {
+      font-size: 2rem;
+    }
+
+    #joke-history {
+      width: 100%;
+      max-height: 200px;
+      margin: 10px auto;
+      padding: 15px;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      border-radius: 15px;
+      box-shadow: 0 6px 12px var(--shadow-color);
+      overflow-y: auto;
+      list-style: none;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #joke-history li {
+      background-color: var(--item-bg);
+      margin-bottom: 10px;
+      padding: 12px 15px;
+      border-radius: 12px;
+      box-shadow: 0 3px 6px var(--shadow-color);
+      white-space: pre-line;
+      cursor: default;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #joke-history li:hover {
+      background-color: var(--item-hover);
+    }
+
+    .joke-text {
+      flex: 1;
+      padding-right: 10px;
+    }
+
+    .fav-btn {
+      background: none;
+      border: none;
+      color: gold;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .fav-btn:hover {
+      transform: scale(1.2);
+    }
+
+    .favorite {
+      border: 2px solid gold;
+      box-shadow: 0 0 10px rgba(255,215,0,0.5);
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        max-width: 90vw;
+        padding: 20px;
+      }
+
+      #joke-history {
+        max-height: 180px;
+        font-size: 0.9rem;
+      }
+
+      #joke {
+        height: 100px;
+        font-size: 0.9rem;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+      }
+      
+      .btn-group {
+        flex-direction: column;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #joke-history li {
+      animation: fadeInUp 0.3s ease forwards;
+    }
+
+    #joke {
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    #joke.animate {
+      animation: pulse 0.6s ease;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+      50% {
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+    }
+    
+    .search-container {
+      position: relative;
+      margin: 20px 0;
+    }
+    
+    #search-jokes {
+      width: 100%;
+      padding: 12px 20px 12px 40px;
+      border-radius: 30px;
+      border: none;
+      background: #fff;
+      color: black;
+      font-size: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .search-icon {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(255,255,255,0.7);
+    }
+    
+    body.dark #search-jokes {
+      background: #fff;
+      font-size: 1rem;
+    }
+ 
